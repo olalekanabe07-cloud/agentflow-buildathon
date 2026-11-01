@@ -1,7 +1,7 @@
 FROM node:22-bookworm-slim
 
 WORKDIR /app
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 ENV PORT=3001
 ENV AGENTFLOW_DATA_DIR=/app/data
 
