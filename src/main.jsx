@@ -121,7 +121,7 @@ function App() {
     </aside>
     {mobileNav && <button className="scrim" onClick={() => setMobileNav(false)} aria-label="Close navigation"/>}
     <main className="main-content">
-      <header className="topbar"><button className="mobile-menu" onClick={() => setMobileNav(true)} aria-label="Open navigation"><Icon name="menu"/></button><div className="breadcrumbs"><span>Orbit workspace</span><Icon name="arrow" size={13}/><b>{pageTitle(page)}</b></div><div className="topbar-actions"><span className="local-pill"><span className="status-dot"/> Local mode</span><button className="avatar-button">O</button></div></header>
+      <header className="topbar"><button className="mobile-menu" onClick={() => setMobileNav(true)} aria-label="Open navigation"><Icon name="menu"/></button><div className="breadcrumbs"><span>Orbit workspace</span><Icon name="arrow" size={13}/><b>{pageTitle(page)}</b></div><div id="autocomplete"></div><div className="topbar-actions"><span className="local-pill"><span className="status-dot"/> Local mode</span><button className="avatar-button">O</button></div></header>
       <div className="content-wrap">
         {page === 'dashboard' && <Dashboard stats={stats} agents={agents} workflows={workflows} executions={executions} onNavigate={navigate} onNewAgent={() => setModal({ type: 'agent' })} onNewWorkflow={() => setModal({ type: 'workflow' })} onRunDemo={runDemo} onRun={(workflow) => setModal({ type: 'run', workflow })} />}
         {page === 'agents' && <AgentsPage agents={agents} onNew={() => setModal({ type: 'agent' })} onEdit={(agent) => setModal({ type: 'agent', agent })} onDelete={removeAgent} />}
